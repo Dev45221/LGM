@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" class="result" id="result" disabled>
+      <button class="clear" onclick="clearResult()">AC</button><br>
+      <button class="operator" onclick="updateResult('/')">/</button>
+      <button onclick="updateResult('7')">7</button>
+      <button onclick="updateResult('8')">8</button>
+      <button onclick="updateResult('9')">9</button>
+      <button class="operator" onclick="updateResult('*')">*</button>
+      <button onclick="updateResult('4')">4</button>
+      <button onclick="updateResult('5')">5</button>
+      <button onclick="updateResult('6')">6</button><br>
+      <button class="operator" onclick="updateResult('-')">-</button>
+      <button onclick="updateResult('1')">1</button>
+      <button onclick="updateResult('2')">2</button>
+      <button onclick="updateResult('3')">3</button><br>
+      <button class="operator" onclick="updateResult('+')">+</button>
+      <button onclick="updateResult('0')">0</button>
+      <button onclick="updateResult('.')">.</button>
+      <button class="operator" onclick="calculateResult()">=</button>
+    </div>
+    
+    <script>
+      function updateResult(value) {
+        const result = document.querySelector('#result');
+        result.value += value;
+      }
+      
+      function clearResult() {
+        const result = document.querySelector('#result');
+        result.value = '';
+      }
+      
+      function calculateResult() {
+        const result = document.querySelector('#result');
+        result.value = eval(result.value);
+      }
+    </script>
+  </body>
+</html>
